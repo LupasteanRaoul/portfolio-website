@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Lupăștean Raoul",
   title: "Junior Developer",
   tagline: "Building modern web experiences with passion and precision",
-  description: "Aspiring Full-Stack Developer cu o combinație unică de competențe tehnice și experiență în business. Am construit peste 50 de proiecte, am obținut 8 certificări FreeCodeCamp și transform idei complexe în aplicații web elegante.",
+  description: "Aspiring Full-Stack Developer cu o combinație unică de competențe tehnice și experiență în business. Am construit peste 50 de proiecte, am obținut 9 certificări FreeCodeCamp și transform idei complexe în aplicații web elegante.",
   email: "lupasteanraoul@gmail.com",
   phone: "+40 745 766 431",
   location: "Timișoara, România",
@@ -19,9 +19,9 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { number: "5", label: "Portfolios" },
+  { number: "6", label: "Portfolios" },
   { number: "50+", label: "Projects" },
-  { number: "8", label: "Certificates" },
+  { number: "9", label: "Certificates" },
   { number: "3", label: "Languages" }
 ];
 
@@ -33,10 +33,10 @@ export const experience = [
     location: "Wieselburg, Austria",
     period: "Mai 2023 — Iul. 2025",
     description: [
-      "Coordonat activitățile de transport intern și extern, optimizând fluxul de livrare și producție",
-      "Analizat procesele de producție pentru anticiparea nevoilor de materiale și prevenirea întârzierilor",
-      "Colaborare constantă cu furnizorii pentru gestionarea eficientă a comenzilor",
-      "Implementat soluții logistice care au redus timpul de livrare și crescut eficiența operațională"
+      "Coordonare operațiuni supply chain internațional în industria automotive, optimizând sincronizarea dintre planificarea producției și livrare, crescând rata on-time delivery cu 25%",
+      "Colaborare cu echipe cross-funcționale pentru analizarea fluxurilor operaționale, identificarea riscurilor și prevenirea întreruperilor de proces",
+      "Utilizare și optimizare sisteme software enterprise pentru monitorizare inventar și transport în timp real, contribuind la automatizarea raportării și reducerea introducerii manuale a datelor cu 35%",
+      "Tranziție către dezvoltare software aplicând abordare orientată spre eficiență, automatizare și soluții scalabile"
     ]
   },
   {
@@ -46,11 +46,10 @@ export const experience = [
     location: "Timișoara, România",
     period: "Sept. 2020 — Mar. 2023",
     description: [
-      "Coordonat o echipă de peste 10 membri, asigurând atingerea obiectivelor lunare",
-      "Promovat din consultant în Manager de Grup în doar 6 luni",
-      "Recunoscut lunar ca 'Best Seller of the Month'",
-      "Utilizat avansat instrumente Microsoft și Google pentru automatizarea raportărilor",
-      "Dezvoltat competențe Front-End Development (HTML, CSS, JavaScript)"
+      "Aplicare analiză de date și automatizare pentru optimizarea proceselor comerciale, utilizând Microsoft Power Platform (Power BI, Power Query, Power Automate)",
+      "Proiectare și implementare dashboard-uri automatizate și soluții BI în Excel (macro-uri, formule complexe, modelare date), reducând timpul de raportare cu 40%",
+      "Leadership pentru echipă de 10+ membri, introducând metodologii agile pentru tracking KPI și optimizare performanță",
+      "Avansare rapidă de la Consultant la Group Manager în 6 luni, pe baza rezultatelor cuantificabile și a impactului organizațional"
     ]
   }
 ];
@@ -73,16 +72,17 @@ export const education = [
 ];
 
 export const skills = {
-  frontend: ["HTML5", "CSS3", "JavaScript ES6+", "React", "TypeScript", "Responsive Design", "Tailwind CSS"],
-  backend: ["Python", "SQL", "PostgreSQL", "C#", "Node.js", "Database Design"],
-  tools: ["Git & GitHub", "VS Code", "Power BI", "Excel Advanced", "Power Automate", "SharePoint"],
-  marketing: ["Google Ads", "SEO", "Analytics", "Digital Marketing", "CRM"]
+  frontend: ["HTML5", "CSS3", "JavaScript ES6+", "React", "TypeScript", "Responsive Design", "Tailwind CSS", "React 19", "React Router v7", "Radix UI", "Recharts", "Zod", "Axios"],
+  backend: ["Python", "Node.js", "FastAPI", "Express", "Uvicorn", "Pydantic", "JWT", "bcrypt", "Bash"],  tools: ["Git & GitHub", "VS Code", "Power BI", "Excel Advanced", "Power Automate", "SharePoint"],
+  database: ["MongoDB (Motor)", "PostgreSQL", "SQL", "Database Design"],
+  tools: ["Git", "GitHub (Actions)", "VS Code", "Vercel", "Render", "npm/yarn", "Postman", "Docker (de bază)", "CI/CD", "CORS", "Environment Variables"],
+  business: ["Power BI", "Power Automate", "Excel Avansat", "Leadership (10+ membri)", "Agile", "Data Analysis", "KPI Tracking", "Google Analytics", "SEO", "Google Ads", "CRM"]
 };
 
 export const skillsMarquee = [
-  "HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Python", "SQL",
-  "PostgreSQL", "C#", "Git", "Node.js", "Tailwind CSS", "Power BI",
-  "REST APIs", "Responsive Design", "GSAP", "Figma"
+  "HTML5", "CSS3", "JavaScript", "TypeScript", "React 19", "Python", "Node.js",
+  "FastAPI", "MongoDB", "PostgreSQL", "SQL", "Git", "Tailwind CSS", "Power BI",
+  "REST APIs", "JWT", "Docker", "CI/CD", "Vercel", "Render"
 ];
 
 export const projects = [
@@ -129,6 +129,15 @@ export const projects = [
     description: "Database design, query-uri complexe, scheme și managementul datelor relaționale",
     tech: ["SQL", "PostgreSQL", "Design"],
     githubUrl: "https://github.com/LupasteanRaoul/sql-database-portfolio"
+  },
+  {
+    id: 6,
+    num: "06",
+    title: "TaskFlow - Task Management Platform",
+  description: "Full-stack task management cu React, FastAPI, MongoDB. Kanban board, JWT auth, dashboard analytics",
+  tech: ["React", "FastAPI", "MongoDB", "JWT"],
+  liveUrl: "https://task-manager-gamma-taupe-32.vercel.app",
+  githubUrl: "https://github.com/LupasteanRaoul/task-manager"
   }
 ];
 
@@ -139,6 +148,7 @@ export const certifications = [
     items: [
       "Responsive Web Design (v9)",
       "JavaScript Algorithms & Data Structures (v9)",
+      "Scientific Computing with Python",
       "Relational Databases (v9)",
       "Foundational C# with Microsoft",
       "B1 English for Developers",

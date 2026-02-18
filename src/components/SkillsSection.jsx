@@ -55,8 +55,9 @@ export const SkillsSection = () => {
   const categories = [
     { title: 'Frontend', items: skills.frontend },
     { title: 'Backend', items: skills.backend },
-    { title: 'Tools & Platforms', items: skills.tools },
-    { title: 'Marketing & Analytics', items: skills.marketing }
+    { title: 'Database', items: skills.database },
+    { title: 'Developer Tools & Platforms', items: skills.tools },
+    { title: 'Business & Analytics', items: skills.business }
   ];
 
   return (

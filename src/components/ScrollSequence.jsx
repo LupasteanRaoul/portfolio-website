@@ -193,29 +193,25 @@ function drawFrame(ctx, width, height, progress) {
   if (progress > 0.5) {
     ctx.save();
 
-    const currentTransform = ctx.getTransform();
-  ctx.setTransform(
-    currentTransform.a,  
-    currentTransform.b,  
-    currentTransform.c,  
-    currentTransform.d,  
-    currentTransform.e,  
-    currentTransform.f   
-  );
-      const textAlpha = Math.min(1, (progress - 0.5) * 3);
-    ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
-    ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * textAlpha})`;
-    ctx.textAlign = 'center';
-    ctx.fillText('Full-Stack Developer', 0, 30 / zoom);
-    
-    if (progress > 0.7) {
-      const subAlpha = Math.min(1, (progress - 0.7) * 4);
-      ctx.font = `300 ${11 / zoom}px Inter, sans-serif`;
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.4 * subAlpha})`;
-      ctx.fillText('50+ Projects  •  9 Certificates  •  5 Portfolios', 0, 50 / zoom);
-    }
-    ctx.restore();
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const textX = width / 2;
+    const textY = height / 2;
+
+     const textAlpha = Math.min(1, (progress - 0.5) * 3);
+  ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
+  ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * textAlpha})`;
+  ctx.textAlign = 'center';
+  ctx.fillText('Full-Stack Developer', textX, textY + 30 / zoom);
+  
+  if (progress > 0.7) {
+    const subAlpha = Math.min(1, (progress - 0.7) * 4);
+    ctx.font = `300 ${11 / zoom}px Inter, sans-serif`;
+    ctx.fillStyle = `rgba(255, 255, 255, ${0.4 * subAlpha})`;
+    ctx.fillText('50+ Projects  •  9 Certificates  •  5 Portfolios', textX, textY + 50 / zoom);
   }
+  ctx.restore();
+}
 
   ctx.restore();
 

@@ -192,7 +192,7 @@ function drawFrame(ctx, width, height, progress) {
   // Center text - MORE VISIBLE
   if (progress > 0.5) {
     ctx.save();
-    ctx.rotate(-rotation * 0.08);  // ← Anulează rotația (minus rotația aplicată mai sus)
+    ctx.rotate(-rotation * 0.08);  // ← Anulează rotația
     
     const textAlpha = Math.min(1, (progress - 0.5) * 3);
     ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
@@ -226,6 +226,7 @@ export const ScrollSequence = () => {
   const canvasRef = useRef(null);
   const frameRef = useRef(0);
   const rafRef = useRef(null);
+  const isInitialized = useRef(false); // ✅ Flag pentru a rula o singură dată
 
   const render = useCallback(() => {
     const canvas = canvasRef.current;
@@ -244,6 +245,7 @@ export const ScrollSequence = () => {
     drawFrame(ctx, rect.width, rect.height, Math.min(1, Math.max(0, progress)));
   }, []);
 
+  // ✅ useEffect #1: Scroll handler (NU se modifică)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -267,23 +269,20 @@ export const ScrollSequence = () => {
     };
   }, [render]);
 
+  // ✅ useEffect #2: Resize handler (NU se modifică)
   useEffect(() => {
     const handleResize = () => render();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [render]);
 
+  // ✅ useEffect #3: Reset scroll DOAR la prima încărcare (MODIFICAT)
   useEffect(() => {
-    if (containerRef.current) {
+    if (!isInitialized.current && containerRef.current) {
       containerRef.current.scrollTop = 0;
+      isInitialized.current = true; // ✅ Marchează că s-a făcut reset-ul
     }
   }, []);
-
-  return (
-    <section className="relative bg-black">
-      {/* ... existing JSX ... */}
-    </section>
-  );
 
   return (
     <section className="relative bg-black">

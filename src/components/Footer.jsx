@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <p className="text-white/30 text-sm font-light">
-              \u00a9 2026 {personalInfo.name}
+               2026 {personalInfo.name}
             </p>
             <p className="text-white/15 text-xs font-light mt-1">
               Built with React, GSAP & passion

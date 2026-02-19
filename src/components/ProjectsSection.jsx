@@ -83,7 +83,7 @@ export const ProjectsSection = () => {
             Featured work
           </h2>
           <p className="text-white/40 text-sm font-light mt-4 max-w-md">
-            5 portfolio-uri comprehensive cu peste 50 de proiecte
+          TaskFlow (Full-Stack) + 5 portfolio-uri comprehensive cu peste 50 de proiecte
           </p>
         </div>
 

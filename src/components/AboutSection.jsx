@@ -51,8 +51,8 @@ export const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
           <div className="about-reveal">
             <p className="text-black/65 text-base md:text-lg font-light leading-[1.8]">
-              Sunt un developer la început de drum în tech, cu un Master în Marketing (nota 10.00)
-              și experiență ca Manager de Vânzări. Aduc o perspectivă unică în dezvoltarea software
+              Sunt un developer la început de drum în tech, cu un Master în Marketing și experiență 
+              ca Manager de Vânzări. Aduc o perspectivă unică în dezvoltarea software
               — înțeleg atât codul cât și utilizatorul.
             </p>
             <p className="text-black/65 text-base md:text-lg font-light leading-[1.8] mt-6">

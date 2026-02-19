@@ -273,6 +273,18 @@ export const ScrollSequence = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [render]);
 
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
+  }, []);
+
+  return (
+    <section className="relative bg-black">
+      {/* ... existing JSX ... */}
+    </section>
+  );
+
   return (
     <section className="relative bg-black">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-12">

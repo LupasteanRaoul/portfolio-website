@@ -193,8 +193,16 @@ function drawFrame(ctx, width, height, progress) {
   if (progress > 0.5) {
     ctx.save();
 
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    const textAlpha = Math.min(1, (progress - 0.5) * 3);
+    const currentTransform = ctx.getTransform();
+  ctx.setTransform(
+    currentTransform.a,  
+    currentTransform.b,  
+    currentTransform.c,  
+    currentTransform.d,  
+    currentTransform.e,  
+    currentTransform.f   
+  );
+      const textAlpha = Math.min(1, (progress - 0.5) * 3);
     ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
     ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * textAlpha})`;
     ctx.textAlign = 'center';

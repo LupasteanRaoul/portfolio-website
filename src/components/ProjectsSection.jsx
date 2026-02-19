@@ -82,7 +82,7 @@ export const ProjectsSection = () => {
           <h2 className="text-white text-[clamp(2rem,4vw,3.5rem)] font-extralight tracking-tight leading-tight">
             Featured work
           </h2>
-          <p className="text-white/40 text-sm font-light mt-4 max-w-md">
+          <p className="text-white/40 text-sm font-light mt-4 max-w-xl">
           TaskFlow (Full-Stack) + 5 portfolio-uri comprehensive cu peste 50 de proiecte
           </p>
         </div>

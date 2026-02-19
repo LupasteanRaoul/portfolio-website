@@ -56,9 +56,9 @@ export const AboutSection = () => {
               — înțeleg atât codul cât și utilizatorul.
             </p>
             <p className="text-black/65 text-base md:text-lg font-light leading-[1.8] mt-6">
-              Am construit peste 50 de proiecte, obținut 8 certificări FreeCodeCamp și dezvoltat
-              5 portfolio-uri comprehensive. Sunt pasionat de tehnologie, învățare continuă
-              și construirea de experiențe web elegante.
+              Am construit peste 50 de proiecte, obținut 9 certificări FreeCodeCamp, dezvoltat
+              5 portfolio-uri comprehensive și o aplicație full-stack. Sunt pasionat de tehnologie, 
+              învățare continuă și construirea de experiențe web elegante.
             </p>
 
             <div className="flex flex-col gap-3 mt-10">

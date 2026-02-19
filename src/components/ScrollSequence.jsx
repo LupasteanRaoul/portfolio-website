@@ -192,11 +192,7 @@ function drawFrame(ctx, width, height, progress) {
   // Center text - MORE VISIBLE
   if (progress > 0.5) {
     ctx.save();
-
-    const dpr = window.devicePixelRatio || 1;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const textX = width / 2;
-    const textY = height / 2;
+    ctx.rotate(-rotation * 0.08);
 
      const textAlpha = Math.min(1, (progress - 0.5) * 3);
   ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;

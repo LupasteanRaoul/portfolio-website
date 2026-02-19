@@ -191,6 +191,9 @@ function drawFrame(ctx, width, height, progress) {
 
   // Center text - MORE VISIBLE
   if (progress > 0.5) {
+    ctx.save();
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     const textAlpha = Math.min(1, (progress - 0.5) * 3);
     ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
     ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * textAlpha})`;
@@ -201,8 +204,9 @@ function drawFrame(ctx, width, height, progress) {
       const subAlpha = Math.min(1, (progress - 0.7) * 4);
       ctx.font = `300 ${11 / zoom}px Inter, sans-serif`;
       ctx.fillStyle = `rgba(255, 255, 255, ${0.4 * subAlpha})`;
-      ctx.fillText('50+ Projects  •  8 Certificates  •  5 Portfolios', 0, 50 / zoom);
+      ctx.fillText('50+ Projects  •  9 Certificates  •  5 Portfolios', 0, 50 / zoom);
     }
+    ctx.restore();
   }
 
   ctx.restore();

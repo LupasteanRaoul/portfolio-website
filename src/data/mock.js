@@ -19,7 +19,7 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { number: "6", label: "Portfolios" },
+  { number: "5", label: "Portfolios" },
   { number: "50+", label: "Projects" },
   { number: "9", label: "Certificates" },
   { number: "3", label: "Languages" }

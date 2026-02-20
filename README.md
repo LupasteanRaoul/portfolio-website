@@ -4,7 +4,7 @@
 
 **Aspiring Full-Stack Developer** | React • Python • FastAPI • MongoDB
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Vizitează_Site-000?style=for-the-badge&logo=netlify&logoColor=white)](https://lupastean-raoul-cv.netlify.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Viziteaz%C4%83_Site-000?style=for-the-badge&logo=vercel&logoColor=white)](https://lupastean-raoul-cv.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raul-lupastean-a66705244/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LupasteanRaoul)
 

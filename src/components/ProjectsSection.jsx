@@ -1,8 +1,8 @@
 import { useEffect, useRef, useCallback } from 'react';
-import { projects } from '../data/mock';
 import { ExternalLink, Github } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +43,7 @@ const TiltCard = ({ children, className = '' }) => {
 
 export const ProjectsSection = () => {
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,18 +78,18 @@ export const ProjectsSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="proj-reveal mb-20">
           <p className="text-white/30 text-xs tracking-[0.3em] uppercase font-light mb-4">
-            Projects
+            {t.projectsTitle}
           </p>
           <h2 className="text-white text-[clamp(2rem,4vw,3.5rem)] font-extralight tracking-tight leading-tight">
-            Featured work
+            {t.projectsSubtitle}
           </h2>
           <p className="text-white/40 text-sm font-light mt-4 max-w-xl">
-          TaskFlow (Full-Stack) + 5 portfolio-uri comprehensive cu peste 50 de proiecte
+            {t.projectsDescription}
           </p>
         </div>
 
         <div className="space-y-0">
-          {projects.map((proj) => (
+          {t.projects.map((proj) => (
             <TiltCard
               key={proj.id}
               className="proj-reveal group border-t border-white/8 py-10 md:py-14 hover:bg-white/[0.02] transition-colors duration-500"
@@ -124,7 +125,7 @@ export const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 transition-all duration-300"
-                      title="Live Demo"
+                      title={t.liveDemo}
                     >
                       <ExternalLink size={14} />
                     </a>

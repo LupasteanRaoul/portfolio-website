@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { experience, education } from '../data/mock';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ExperienceSection = () => {
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -41,15 +42,15 @@ export const ExperienceSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="exp-reveal mb-20">
           <p className="text-white/30 text-xs tracking-[0.3em] uppercase font-light mb-4">
-            Experience
+            {t.experienceTitle}
           </p>
           <h2 className="text-white text-[clamp(2rem,4vw,3.5rem)] font-extralight tracking-tight leading-tight">
-            Where I've worked
+            {t.experienceSubtitle}
           </h2>
         </div>
 
         <div className="space-y-0">
-          {experience.map((exp) => (
+          {t.experience.map((exp) => (
             <div
               key={exp.id}
               className="exp-reveal group border-t border-white/8 py-12 md:py-16"
@@ -88,12 +89,12 @@ export const ExperienceSection = () => {
         <div className="mt-24">
           <div className="exp-reveal mb-12">
             <p className="text-white/30 text-xs tracking-[0.3em] uppercase font-light mb-4">
-              Education
+              {t.educationTitle}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {education.map((edu) => (
+            {t.education.map((edu) => (
               <div
                 key={edu.id}
                 className="exp-reveal border border-white/8 rounded-2xl p-8 hover:border-white/15 transition-colors duration-300"
@@ -108,7 +109,7 @@ export const ExperienceSection = () => {
                   {edu.institution}
                 </p>
                 <div className="mt-4 inline-flex items-center gap-2">
-                  <span className="text-white/60 text-xs font-light">Nota:</span>
+                  <span className="text-white/60 text-xs font-light">{t.grade}:</span>
                   <span className="text-white text-sm font-light">{edu.grade}</span>
                 </div>
               </div>

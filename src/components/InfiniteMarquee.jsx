@@ -44,8 +44,7 @@ export const InfiniteMarquee = ({ items, speed = 40, direction = 'left', classNa
         {doubled.map((item, idx) => (
           <span
             key={`${item}-${idx}`}
-            className={`${dark ? 'text-black/[0.06]' : 'text-white/10'} text-[clamp(1rem,3vw,1.5rem)] font-extralight tracking-wider select-none`}
-          >
+            className={`${dark ? 'text-black/[0.15]' : 'text-white/20'} text-[clamp(1rem,3vw,1.5rem)] font-extralight tracking-wider select-none`}          >
             {item}
           </span>
         ))}

@@ -1,7 +1,88 @@
-import { useEffect, useRef } from 'react';
-import { personalInfo, stats } from '../data/mock';
-import { ArrowDown, Github, Linkedin, Download } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowDown, Github, Linkedin, Download, X, FileText } from 'lucide-react';
 import gsap from 'gsap';
+import { useLanguage } from '../context/LanguageContext';
+
+// Modal pentru selectare CV
+const CVModal = ({ isOpen, onClose, t }) => {
+  if (!isOpen) return null;
+
+  const handleDownload = (lang) => {
+    const fileName = lang === 'ro' 
+      ? '/Lupastean_Raoul_CV_RO.pdf' 
+      : '/Lupastean_Raoul_CV_EN.pdf';
+    
+    const link = document.createElement('a');
+    link.href = fileName;
+    link.download = fileName.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      
+      {/* Modal */}
+      <div className="relative bg-zinc-900 border border-white/10 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+        {/* Close button */}
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+        >
+          <X size={20} />
+        </button>
+
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FileText size={28} className="text-white/60" />
+          </div>
+          <h3 className="text-white text-xl font-light">{t.selectCVLanguage}</h3>
+        </div>
+
+        {/* Options */}
+        <div className="space-y-3">
+          <button
+            onClick={() => handleDownload('ro')}
+            className="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🇷🇴</span>
+              <span className="text-white/80 font-light">{t.downloadRO}</span>
+            </div>
+            <Download size={18} className="text-white/40 group-hover:text-white transition-colors" />
+          </button>
+
+          <button
+            onClick={() => handleDownload('en')}
+            className="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🇬🇧</span>
+              <span className="text-white/80 font-light">{t.downloadEN}</span>
+            </div>
+            <Download size={18} className="text-white/40 group-hover:text-white transition-colors" />
+          </button>
+        </div>
+
+        {/* Cancel */}
+        <button
+          onClick={onClose}
+          className="w-full mt-6 py-3 text-white/40 text-sm font-light hover:text-white/60 transition-colors"
+        >
+          {t.cancel}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export const HeroSection = () => {
   const heroRef = useRef(null);
@@ -9,6 +90,9 @@ export const HeroSection = () => {
   const subtitleRef = useRef(null);
   const statsRef = useRef(null);
   const ringRef = useRef(null);
+  
+  const [showCVModal, setShowCVModal] = useState(false);
+  const { t, personalInfo } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -66,11 +150,11 @@ export const HeroSection = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-3 mb-12">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="text-white/50 text-xs tracking-[0.2em] uppercase font-light">Available for opportunities</span>
+            <span className="text-white/50 text-xs tracking-[0.2em] uppercase font-light">{t.available}</span>
           </div>
 
           <div ref={titleRef} style={{ perspective: '1000px' }}>
-            <p className="text-white/50 text-lg md:text-xl font-light mb-4 tracking-wide">Hello, I'm</p>
+            <p className="text-white/50 text-lg md:text-xl font-light mb-4 tracking-wide">{t.hello}</p>
             <h1 className="text-[clamp(3rem,8vw,7rem)] font-extralight text-white leading-[0.95] tracking-[-0.03em] mb-4 hero-name-shine">{personalInfo.name.split(' ')[0]}</h1>
             <h1 className="text-[clamp(3rem,8vw,7rem)] font-extralight text-white/30 leading-[0.95] tracking-[-0.03em]">{personalInfo.name.split(' ')[1]}</h1>
           </div>
@@ -80,7 +164,7 @@ export const HeroSection = () => {
           </div>
 
           <div ref={statsRef} className="flex gap-10 md:gap-16 mt-16">
-            {stats.map((stat) => (
+            {t.stats.map((stat) => (
               <div key={stat.label} className="flex flex-col">
                 <span className="text-white text-3xl md:text-4xl font-extralight tracking-tight">{stat.number}</span>
                 <span className="text-white/35 text-xs tracking-[0.15em] uppercase mt-1 font-light">{stat.label}</span>
@@ -88,6 +172,7 @@ export const HeroSection = () => {
             ))}
           </div>
 
+          {/* Butoane */}
           <div className="flex items-center gap-4 mt-16">
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 transition-all duration-300">
               <Github size={16} />
@@ -96,23 +181,30 @@ export const HeroSection = () => {
               <Linkedin size={16} />
             </a>
             <span className="w-px h-6 bg-white/10 mx-2" />
-            <a href="/Lupastean_Raoul_CV_2026.pdf" download className="text-white/50 text-sm font-light hover:text-white/80 transition-colors duration-300 flex items-center gap-2">
+            
+            <button 
+              onClick={() => setShowCVModal(true)}
+              className="text-white/50 text-sm font-light hover:text-white/80 transition-colors duration-300 flex items-center gap-2"
+            >
               <Download size={12} />
-              Download CV
-            </a>
+              {t.downloadCV}
+            </button>
+            
             <span className="w-px h-6 bg-white/10 mx-1" />
             <a href="#projects" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-white/50 text-sm font-light hover:text-white/80 transition-colors duration-300 flex items-center gap-2">
-              View Projects
+              {t.viewProjects}
               <ArrowDown size={12} className="rotate-[-90deg]" />
             </a>
           </div>
         </div>
 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-          <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase font-light">Scroll</span>
+          <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase font-light">{t.scroll}</span>
           <ArrowDown size={14} className="text-white/30 animate-bounce" />
         </div>
       </div>
+
+      <CVModal isOpen={showCVModal} onClose={() => setShowCVModal(false)} t={t} />
     </section>
   );
 };

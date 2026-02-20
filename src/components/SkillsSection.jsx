@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { skills } from '../data/mock';
+import { skills, skillsMarquee } from '../data/translations';
 import { InfiniteMarquee } from './InfiniteMarquee';
-import { skillsMarquee } from '../data/mock';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +27,7 @@ const SkillCategory = ({ title, items }) => (
 
 export const SkillsSection = () => {
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,11 +54,11 @@ export const SkillsSection = () => {
   }, []);
 
   const categories = [
-    { title: 'Frontend', items: skills.frontend },
-    { title: 'Backend', items: skills.backend },
-    { title: 'Database', items: skills.database },
-    { title: 'Developer Tools & Platforms', items: skills.tools },
-    { title: 'Business & Analytics', items: skills.business }
+    { title: t.skillCategories.frontend, items: skills.frontend },
+    { title: t.skillCategories.backend, items: skills.backend },
+    { title: t.skillCategories.database, items: skills.database },
+    { title: t.skillCategories.tools, items: skills.tools },
+    { title: t.skillCategories.business, items: skills.business }
   ];
 
   return (
@@ -72,14 +73,14 @@ export const SkillsSection = () => {
           items={skillsMarquee}
           speed={30}
           direction="left"
-          className="opacity-40 mb-8"
+          className="opacity-70 mb-8"
           dark={true}
         />
         <InfiniteMarquee
           items={[...skillsMarquee].reverse()}
           speed={25}
           direction="right"
-          className="opacity-25"
+          className="opacity-50"
           dark={true}
         />
       </div>
@@ -87,10 +88,10 @@ export const SkillsSection = () => {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="skills-reveal mb-20">
           <p className="text-black/40 text-xs tracking-[0.3em] uppercase font-light mb-4">
-            Skills
+            {t.skillsTitle}
           </p>
           <h2 className="text-black text-[clamp(2rem,4vw,3.5rem)] font-extralight tracking-tight leading-tight">
-            Technical expertise
+            {t.skillsSubtitle}
           </h2>
         </div>
 

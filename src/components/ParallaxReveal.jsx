@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,7 @@ export const ParallaxReveal = () => {
   const line2Ref = useRef(null);
   const line3Ref = useRef(null);
   const overlayRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -73,7 +75,7 @@ export const ParallaxReveal = () => {
           ref={line1Ref}
           className="text-[clamp(2.5rem,6vw,5.5rem)] font-extralight text-white leading-[1.1] tracking-[-0.02em]"
         >
-          Passion meets
+          {t.parallaxLine1}
         </p>
         <p
           ref={line2Ref}
@@ -84,14 +86,13 @@ export const ParallaxReveal = () => {
             WebkitTextFillColor: 'transparent'
           }}
         >
-          precision.
+          {t.parallaxLine2}
         </p>
         <p
           ref={line3Ref}
           className="text-white/35 text-base md:text-lg font-extralight mt-8 max-w-lg mx-auto leading-relaxed"
         >
-          Fiecare proiect este o oportunitate de a crea ceva remarcabil.
-          De la concept la cod, fiecare detaliu contează.
+          {t.parallaxDescription}
         </p>
 
         {/* Decorative line */}

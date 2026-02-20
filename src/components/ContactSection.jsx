@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
-import { personalInfo } from '../data/mock';
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ContactSection = () => {
   const sectionRef = useRef(null);
+  const { t, personalInfo } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -41,10 +42,10 @@ export const ContactSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="contact-reveal mb-20">
           <p className="text-white/30 text-xs tracking-[0.3em] uppercase font-light mb-4">
-            Contact
+            {t.contactTitle}
           </p>
           <h2 className="text-white text-[clamp(2rem,5vw,4.5rem)] font-extralight tracking-tight leading-tight max-w-2xl">
-            Let's build something <span className="text-white/30">together</span>
+            {t.contactSubtitle} <span className="text-white/30">{t.contactSubtitleHighlight}</span>
           </h2>
         </div>
 
@@ -54,7 +55,7 @@ export const ContactSection = () => {
             className="contact-reveal group border border-white/8 rounded-2xl p-8 hover:border-white/20 transition-all duration-300"
           >
             <Mail size={18} className="text-white/30 mb-4 group-hover:text-white/60 transition-colors" />
-            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">Email</p>
+            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">{t.email}</p>
             <p className="text-white/70 text-sm font-light group-hover:text-white/90 transition-colors">
               {personalInfo.email}
             </p>
@@ -65,7 +66,7 @@ export const ContactSection = () => {
             className="contact-reveal group border border-white/8 rounded-2xl p-8 hover:border-white/20 transition-all duration-300"
           >
             <Phone size={18} className="text-white/30 mb-4 group-hover:text-white/60 transition-colors" />
-            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">Phone</p>
+            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">{t.phone}</p>
             <p className="text-white/70 text-sm font-light group-hover:text-white/90 transition-colors">
               {personalInfo.phone}
             </p>
@@ -73,7 +74,7 @@ export const ContactSection = () => {
 
           <div className="contact-reveal group border border-white/8 rounded-2xl p-8">
             <MapPin size={18} className="text-white/30 mb-4" />
-            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">Location</p>
+            <p className="text-white/25 text-xs tracking-[0.2em] uppercase font-light mb-2">{t.location}</p>
             <p className="text-white/70 text-sm font-light">
               {personalInfo.location}
             </p>

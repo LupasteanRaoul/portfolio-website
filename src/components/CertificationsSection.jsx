@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
-import { certifications } from '../data/mock';
 import { ExternalLink, Award, BookOpen } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const CertificationsSection = () => {
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -41,15 +42,15 @@ export const CertificationsSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="cert-reveal mb-20">
           <p className="text-black/40 text-xs tracking-[0.3em] uppercase font-light mb-4">
-            Certifications
+            {t.certificationsTitle}
           </p>
           <h2 className="text-black text-[clamp(2rem,4vw,3.5rem)] font-extralight tracking-tight leading-tight">
-            Continuous learning
+            {t.certificationsSubtitle}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {certifications.map((cert) => (
+          {t.certifications.map((cert) => (
             <div
               key={cert.id}
               className="cert-reveal border border-black/8 rounded-2xl p-8 hover:border-black/15 transition-colors duration-300"
@@ -84,7 +85,7 @@ export const CertificationsSection = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-black/50 text-xs tracking-wide hover:text-black/80 transition-colors duration-300"
                 >
-                  View all certificates
+                  {t.viewAllCertificates}
                   <ExternalLink size={12} />
                 </a>
               )}

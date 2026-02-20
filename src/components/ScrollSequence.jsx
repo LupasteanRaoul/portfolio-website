@@ -1,8 +1,9 @@
 import { useEffect, useRef, useCallback } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const TOTAL_FRAMES = 60;
 
-function drawFrame(ctx, width, height, progress) {
+function drawFrame(ctx, width, height, progress, t) {
   ctx.clearRect(0, 0, width, height);
 
   ctx.fillStyle = '#000000';
@@ -189,22 +190,22 @@ function drawFrame(ctx, width, height, progress) {
   ctx.fillStyle = `rgba(255, 255, 255, ${0.5 + progress * 0.2})`;
   ctx.fill();
 
-  // Center text - MORE VISIBLE
+  // Center text - MORE VISIBLE (using translations)
   if (progress > 0.5) {
     ctx.save();
-    ctx.rotate(-rotation * 0.08);  // ← Anulează rotația
+    ctx.rotate(-rotation * 0.08);
     
     const textAlpha = Math.min(1, (progress - 0.5) * 3);
     ctx.font = `300 ${18 / zoom}px Inter, sans-serif`;
     ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * textAlpha})`;
     ctx.textAlign = 'center';
-    ctx.fillText('Full-Stack Developer', 0, 30 / zoom);
+    ctx.fillText(t.scrollSequenceCenterText, 0, 30 / zoom);
     
     if (progress > 0.7) {
       const subAlpha = Math.min(1, (progress - 0.7) * 4);
       ctx.font = `300 ${11 / zoom}px Inter, sans-serif`;
       ctx.fillStyle = `rgba(255, 255, 255, ${0.4 * subAlpha})`;
-      ctx.fillText('50+ Projects  •  9 Certificates  •  5 Portfolios', 0, 50 / zoom);
+      ctx.fillText(t.scrollSequenceStats, 0, 50 / zoom);
     }
     ctx.restore();
   }
@@ -226,7 +227,8 @@ export const ScrollSequence = () => {
   const canvasRef = useRef(null);
   const frameRef = useRef(0);
   const rafRef = useRef(null);
-  const isInitialized = useRef(false); // ✅ Flag pentru a rula o singură dată
+  const isInitialized = useRef(false);
+  const { t } = useLanguage();
 
   const render = useCallback(() => {
     const canvas = canvasRef.current;
@@ -242,10 +244,9 @@ export const ScrollSequence = () => {
     }
 
     const progress = frameRef.current / TOTAL_FRAMES;
-    drawFrame(ctx, rect.width, rect.height, Math.min(1, Math.max(0, progress)));
-  }, []);
+    drawFrame(ctx, rect.width, rect.height, Math.min(1, Math.max(0, progress)), t);
+  }, [t]);
 
-  // ✅ useEffect #1: Scroll handler (NU se modifică)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -269,18 +270,16 @@ export const ScrollSequence = () => {
     };
   }, [render]);
 
-  // ✅ useEffect #2: Resize handler (NU se modifică)
   useEffect(() => {
     const handleResize = () => render();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [render]);
 
-  // ✅ useEffect #3: Reset scroll DOAR la prima încărcare (MODIFICAT)
   useEffect(() => {
     if (!isInitialized.current && containerRef.current) {
       containerRef.current.scrollTop = 0;
-      isInitialized.current = true; // ✅ Marchează că s-a făcut reset-ul
+      isInitialized.current = true;
     }
   }, []);
 
@@ -288,19 +287,19 @@ export const ScrollSequence = () => {
     <section className="relative bg-black">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-12">
         <p className="text-white/30 text-xs tracking-[0.3em] uppercase font-light mb-4">
-          Interactive visualization
+          {t.scrollSequenceLabel}
         </p>
         <h2 className="text-white text-2xl md:text-4xl font-extralight tracking-tight mb-2">
-          My Tech Universe
+          {t.scrollSequenceTitle}
         </h2>
         <p className="text-white/40 text-sm font-light max-w-md mb-4">
-          Scroll în cadrul acestei componente pentru a explora o vizualizare interactivă a skill-urilor mele tehnice.
+          {t.scrollSequenceDescription}
         </p>
         <div className="flex items-center gap-2 mb-4">
           <div className="w-4 h-4 border border-white/30 rounded-full flex items-center justify-center">
             <div className="w-1 h-1 bg-white/50 rounded-full animate-bounce" />
           </div>
-          <span className="text-white/25 text-[10px] tracking-wider uppercase">Scroll down inside</span>
+          <span className="text-white/25 text-[10px] tracking-wider uppercase">{t.scrollSequenceHint}</span>
         </div>
       </div>
 

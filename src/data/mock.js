@@ -73,9 +73,11 @@ export const education = [
 
 export const skills = {
   frontend: ["HTML5", "CSS3", "JavaScript ES6+", "React", "TypeScript", "Responsive Design", "Tailwind CSS", "React 19", "React Router v7", "Radix UI", "Recharts", "Zod", "Axios"],
-  backend: ["Python", "Node.js", "FastAPI", "Express", "Uvicorn", "Pydantic", "JWT", "bcrypt", "Bash"],  tools: ["Git & GitHub", "VS Code", "Power BI", "Excel Advanced", "Power Automate", "SharePoint"],
-  database: ["MongoDB (Motor)", "PostgreSQL", "SQL", "Database Design"],
-  tools: ["Git", "GitHub (Actions)", "VS Code", "Vercel", "Render", "npm/yarn", "Postman", "Docker (de bază)", "CI/CD", "CORS", "Environment Variables"],
+  backend: ["Python", "Node.js", "FastAPI", "Express", "Uvicorn", "Pydantic", "JWT", "bcrypt", "Bash"],
+  ai: ["Groq API (LLaMA 3.3)", "OpenAI API", "Google Gemini", "LLM Prompt Engineering"],
+  cloud: ["Railway", "Vercel", "Render", "MongoDB Atlas"],
+  database: ["MongoDB (Motor)", "MongoDB Atlas", "PostgreSQL", "SQL", "Database Design"],
+  tools: ["Git", "GitHub (Actions)", "VS Code", "npm/yarn", "Postman", "Docker (de bază)", "CI/CD", "CORS", "Environment Variables", "API Debugging"],
   business: ["Power BI", "Power Automate", "Excel Avansat", "Leadership (10+ membri)", "Agile", "Data Analysis", "KPI Tracking", "Google Analytics", "SEO", "Google Ads", "CRM"]
 };
 
@@ -138,6 +140,15 @@ export const projects = [
   tech: ["React", "FastAPI", "MongoDB", "JWT"],
   liveUrl: "https://task-manager-gamma-taupe-32.vercel.app",
   githubUrl: "https://github.com/LupasteanRaoul/task-manager"
+  },
+  {
+    id: 7,
+    num: "07",
+    title: "MyJob CareerCopilot",
+    description: "Platformă inteligentă de gestionare a căutării unui loc de muncă cu AI. Smart tracking, AI assistant, analiză CV, mock interviews, gamification și Chrome Extension",
+    tech: ["React", "FastAPI", "MongoDB Atlas", "Groq API", "JWT", "Chrome Extension"],
+    liveUrl: "https://myjob-careercopilot.vercel.app",
+    githubUrl: "https://github.com/LupasteanRaoul/myjob-careercopilot"
   }
 ];
 

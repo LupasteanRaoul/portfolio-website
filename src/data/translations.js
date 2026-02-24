@@ -25,7 +25,7 @@ export const translations = {
     and: "și",
     businessVision: "viziune business",
     aboutParagraph1: "Sunt un developer la început de drum în tech, cu un Master în Marketing și experiență ca Manager de Vânzări. Aduc o perspectivă unică în dezvoltarea software — înțeleg atât codul cât și utilizatorul.",
-    aboutParagraph2: "Am construit peste 50 de proiecte, obținut 9 certificări FreeCodeCamp, dezvoltat 5 portfolio-uri comprehensive și o aplicație full-stack. Sunt pasionat de tehnologie, învățare continuă și construirea de experiențe web elegante.",
+    aboutParagraph2: "Am construit peste 50 de proiecte, obținut 9 certificări FreeCodeCamp, dezvoltat 5 portfolio-uri comprehensive și 2 aplicații full-stack cu AI. Sunt pasionat de tehnologie, învățare continuă și construirea de experiențe web elegante.",
     personalDetails: "Date Personale",
     birthDate: "Data nașterii",
     nationality: "Naționalitate",
@@ -44,15 +44,17 @@ export const translations = {
     skillCategories: {
       frontend: "Frontend",
       backend: "Backend",
+      ai: "AI & LLM",
+      cloud: "Cloud & Deploy",
       database: "Baze de Date",
-      tools: "Instrumente Developer & Platforme",
+      tools: "Instrumente Developer",
       business: "Business & Analytics"
     },
     
     // Projects
     projectsTitle: "Proiecte",
     projectsSubtitle: "Lucrări selectate",
-    projectsDescription: "TaskFlow (Full-Stack) + 5 portfolio-uri comprehensive cu peste 50 de proiecte",
+    projectsDescription: "MyJob CareerCopilot + TaskFlow (Full-Stack) + 5 portfolio-uri comprehensive cu peste 50 de proiecte",
     liveDemo: "Demo Live",
     viewCode: "Vezi Codul",
     
@@ -202,6 +204,15 @@ export const translations = {
         tech: ["React", "FastAPI", "MongoDB", "JWT"],
         liveUrl: "https://task-manager-gamma-taupe-32.vercel.app",
         githubUrl: "https://github.com/LupasteanRaoul/task-manager"
+      },
+      {
+        id: 7,
+        num: "07",
+        title: "MyJob CareerCopilot",
+        description: "Platformă inteligentă de gestionare a căutării unui loc de muncă cu AI. Smart tracking aplicații, AI chat assistant, analiză CV cu scoring ATS, mock interviews, gamification cu XP/levels/badges și Chrome Extension pentru job scraping",
+        tech: ["React", "FastAPI", "MongoDB Atlas", "Groq API", "JWT", "Chrome Extension"],
+        liveUrl: "https://myjob-careercopilot.vercel.app",
+        githubUrl: "https://github.com/LupasteanRaoul/myjob-careercopilot"
       }
     ],
 
@@ -261,7 +272,7 @@ export const translations = {
     and: "and",
     businessVision: "business vision",
     aboutParagraph1: "I'm a developer at the beginning of my tech journey, with a Master's in Marketing and experience as a Sales Manager. I bring a unique perspective to software development — I understand both the code and the user.",
-    aboutParagraph2: "I've built over 50 projects, earned 9 FreeCodeCamp certifications, developed 5 comprehensive portfolios and a full-stack application. I'm passionate about technology, continuous learning and building elegant web experiences.",
+    aboutParagraph2: "I've built over 50 projects, earned 9 FreeCodeCamp certifications, developed 5 comprehensive portfolios and 2 AI-powered full-stack applications. I'm passionate about technology, continuous learning and building elegant web experiences.",
     personalDetails: "Personal Details",
     birthDate: "Birth Date",
     nationality: "Nationality",
@@ -280,15 +291,17 @@ export const translations = {
     skillCategories: {
       frontend: "Frontend",
       backend: "Backend",
+      ai: "AI & LLM",
+      cloud: "Cloud & Deploy",
       database: "Database",
-      tools: "Developer Tools & Platforms",
+      tools: "Developer Tools",
       business: "Business & Analytics"
     },
     
     // Projects
     projectsTitle: "Projects",
     projectsSubtitle: "Featured work",
-    projectsDescription: "TaskFlow (Full-Stack) + 5 comprehensive portfolios with over 50 projects",
+    projectsDescription: "MyJob CareerCopilot + TaskFlow (Full-Stack) + 5 comprehensive portfolios with over 50 projects",
     liveDemo: "Live Demo",
     viewCode: "View Code",
     
@@ -438,6 +451,15 @@ export const translations = {
         tech: ["React", "FastAPI", "MongoDB", "JWT"],
         liveUrl: "https://task-manager-gamma-taupe-32.vercel.app",
         githubUrl: "https://github.com/LupasteanRaoul/task-manager"
+      },
+      {
+        id: 7,
+        num: "07",
+        title: "MyJob CareerCopilot",
+        description: "AI-powered career management platform. Smart application tracking, AI chat assistant, CV analysis with ATS scoring, mock interviews, gamification with XP/levels/badges and Chrome Extension for job scraping",
+        tech: ["React", "FastAPI", "MongoDB Atlas", "Groq API", "JWT", "Chrome Extension"],
+        liveUrl: "https://myjob-careercopilot.vercel.app",
+        githubUrl: "https://github.com/LupasteanRaoul/myjob-careercopilot"
       }
     ],
 
@@ -518,13 +540,15 @@ export const personalInfoTranslated = {
 export const skills = {
   frontend: ["HTML5", "CSS3", "JavaScript ES6+", "React", "TypeScript", "Responsive Design", "Tailwind CSS", "React 19", "React Router v7", "Radix UI", "Recharts", "Zod", "Axios"],
   backend: ["Python", "Node.js", "FastAPI", "Express", "Uvicorn", "Pydantic", "JWT", "bcrypt", "Bash"],
-  tools: ["Git", "GitHub (Actions)", "VS Code", "Vercel", "Render", "npm/yarn", "Postman", "Docker (basic)", "CI/CD", "CORS", "Environment Variables"],
-  database: ["MongoDB (Motor)", "PostgreSQL", "SQL", "Database Design"],
+  ai: ["Groq API (LLaMA 3.3)", "OpenAI API", "Google Gemini", "LLM Prompt Engineering"],
+  cloud: ["Railway", "Vercel", "Render", "MongoDB Atlas"],
+  tools: ["Git", "GitHub (Actions)", "VS Code", "npm/yarn", "Postman", "Docker (basic)", "CI/CD", "CORS", "Environment Variables", "API Debugging"],
+  database: ["MongoDB (Motor)", "MongoDB Atlas", "PostgreSQL", "SQL", "Database Design"],
   business: ["Power BI", "Power Automate", "Advanced Excel", "Leadership (10+ members)", "Agile", "Data Analysis", "KPI Tracking", "Google Analytics", "SEO", "Google Ads", "CRM"]
 };
 
 export const skillsMarquee = [
   "HTML5", "CSS3", "JavaScript", "TypeScript", "React 19", "Python", "Node.js",
   "FastAPI", "MongoDB", "PostgreSQL", "SQL", "Git", "Tailwind CSS", "Power BI",
-  "REST APIs", "JWT", "Docker", "CI/CD", "Vercel", "Render"
+  "REST APIs", "JWT", "Docker", "CI/CD", "Vercel", "Railway", "Groq API", "AI/LLM"
 ];

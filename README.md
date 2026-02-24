@@ -2,7 +2,7 @@
 
 # 🚀 Lupăștean Raoul — Portfolio 2026
 
-**Aspiring Full-Stack Developer** | React • Python • FastAPI • MongoDB
+**Aspiring Full-Stack Developer** | React • Python • FastAPI • MongoDB • AI Integration
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Viziteaz%C4%83_Site-000?style=for-the-badge&logo=vercel&logoColor=white)](https://lupastean-raoul-cv.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raul-lupastean-a66705244/)
@@ -16,7 +16,7 @@
 
 ## ⚡ Overview
 
-A cutting-edge, performance-optimized portfolio showcasing **50+ projects**, **9 certifications**, and a unique blend of **technical expertise** and **business acumen**. Built with modern technologies and featuring stunning animations, this portfolio represents the pinnacle of web development in 2026.
+A cutting-edge, performance-optimized portfolio showcasing **50+ projects**, **9 certifications**, **2 AI-powered full-stack applications**, and a unique blend of **technical expertise** and **business acumen**. Built with modern technologies and featuring stunning animations, this portfolio represents the pinnacle of web development in 2026.
 
 ### ✨ Key Features
 
@@ -48,11 +48,21 @@ A cutting-edge, performance-optimized portfolio showcasing **50+ projects**, **9
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
-### Tools & Deployment
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+### AI & LLM
+![Groq](https://img.shields.io/badge/Groq_API-000000?style=flat-square&logo=groq&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+
+### Cloud & Deployment
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Railway](https://img.shields.io/badge/Railway-131313?style=flat-square&logo=railway&logoColor=white)
+![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
+
+### Tools
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 
 </div>
 
@@ -239,14 +249,15 @@ gsap.fromTo(element,
 
 ## 🔗 Featured Projects
 
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| [TaskFlow](https://task-manager-gamma-taupe-32.vercel.app) | Full-stack task management with Kanban board | React, FastAPI, MongoDB, JWT |
-| [CSS Portfolio](https://lupasteanraoul.github.io/my-css-projects/) | 6 projects showcasing modern CSS | HTML5, CSS3, JavaScript |
-| [JavaScript Portfolio](https://lupasteanraoul.github.io/javascript-portfolio/) | Interactive apps with ES6+ | JavaScript, APIs, Async/Await |
-| [Frontend Projects](https://lupasteanraoul.github.io/my-frontend-projects/) | React applications | React, TypeScript |
-| [Python Projects](https://lupasteanraoul.github.io/python-projects/) | Backend & automation | Python, Algorithms |
-| [SQL Portfolio](https://github.com/LupasteanRaoul/sql-database-portfolio) | Database design & queries | SQL, PostgreSQL |
+| # | Project | Description | Tech Stack |
+|:-:|---------|-------------|------------|
+| 7 | [**MyJob CareerCopilot**](https://myjob-careercopilot.vercel.app) | AI-powered career management platform. Smart application tracking, AI chat assistant, CV analysis with ATS scoring, mock interviews, gamification with XP/levels/badges and Chrome Extension for job scraping | React, FastAPI, MongoDB Atlas, Groq API, JWT, Chrome Extension |
+| 6 | [TaskFlow](https://task-manager-gamma-taupe-32.vercel.app) | Full-stack task management with Kanban board | React, FastAPI, MongoDB, JWT |
+| 5 | [SQL Portfolio](https://github.com/LupasteanRaoul/sql-database-portfolio) | Database design & complex queries | SQL, PostgreSQL |
+| 4 | [Python Projects](https://lupasteanraoul.github.io/python-projects/) | Backend & automation scripts | Python, Algorithms |
+| 3 | [Frontend Projects](https://lupasteanraoul.github.io/my-frontend-projects/) | React applications with TypeScript | React, TypeScript |
+| 2 | [JavaScript Portfolio](https://lupasteanraoul.github.io/javascript-portfolio/) | Interactive apps with ES6+ | JavaScript, APIs, Async/Await |
+| 1 | [CSS Portfolio](https://lupasteanraoul.github.io/my-css-projects/) | 6 projects showcasing modern CSS | HTML5, CSS3, JavaScript |
 
 ---
 

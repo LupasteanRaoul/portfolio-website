@@ -7,7 +7,7 @@ export const personalInfo = {
   phone: "+40 745 766 431",
   location: "Timișoara, România",
   github: "https://github.com/LupasteanRaoul",
-  linkedin: "https://www.linkedin.com/in/raul-lupastean-a66705244/",
+  linkedin: "https://www.linkedin.com/in/raoul-lupastean-a66705244/",
   birthDate: "22.05.1998",
   nationality: "Român",
   drivingLicense: "Categoria A/B",

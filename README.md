@@ -5,7 +5,7 @@
 **Aspiring Full-Stack Developer** | React • Python • FastAPI • MongoDB • AI Integration
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Viziteaz%C4%83_Site-000?style=for-the-badge&logo=vercel&logoColor=white)](https://lupastean-raoul-cv.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raul-lupastean-a66705244/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/raoul-lupastean-a66705244/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LupasteanRaoul)
 
 <img src="https://raw.githubusercontent.com/LupasteanRaoul/portfolio-website/main/public/preview.png" alt="Previzualizare site" width="100%">
@@ -268,7 +268,7 @@ gsap.fromTo(element,
 | Channel | Link |
 |---------|------|
 | 📧 Email | [lupasteanraoul@gmail.com](mailto:lupasteanraoul@gmail.com) |
-| 💼 LinkedIn | [raul-lupastean](https://www.linkedin.com/in/raul-lupastean-a66705244/) |
+| 💼 LinkedIn | [raul-lupastean](https://www.linkedin.com/in/raoul-lupastean-a66705244/) |
 | 🐙 GitHub | [LupasteanRaoul](https://github.com/LupasteanRaoul) |
 | 📍 Location | Timișoara, România |
 | 📱 Phone | +40 745 766 431 |
